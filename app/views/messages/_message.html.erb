@@ -14,5 +14,7 @@
     <!-- 投稿したメッセージ内容を記述する -->
       <%= message.content%>
     </div>
+    <!-- if以下の記述により、画像がない場合は投稿できない、画像があるか、ないかを判断している -->
+    <%= image_tag message.image.variant(resize:'500x500'), class: 'message-image' if message.image.attached?%>
   </div>
 </div>
